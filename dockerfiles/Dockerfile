@@ -2,7 +2,7 @@ FROM python:3.9.6-slim-buster
 
 # Definition of a Device & Service
 ENV POSITION=FaceDetection \
-    SERVICE=face-detection-from-directory \
+    SERVICE=event-driven-face-existence-detection \
     AION_HOME=/var/lib/aion
 
 RUN mkdir ${AION_HOME}

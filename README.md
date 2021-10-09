@@ -3,8 +3,8 @@
 
 ### Clone and Build
 ```
-$ git clone git@bitbucket.org:latonaio/face-existence-detection.git
-$ cd /path/to/face-existence-detection
+$ git clone git@bitbucket.org:latonaio/event-driven-face-existence-detection.git
+$ cd /path/to/event-driven-face-existence-detection
 $ make docker-build
 ```
 
@@ -25,7 +25,7 @@ $ make docker-build
 
 ### How to Use ###
 
-* Access `ws://face-existence-detection:8888/websocket` (Only access internal k8s cluster network.)
+* Access `ws://event-driven-face-existence-detection:8888/websocket` (Only access internal k8s cluster network.)
 * Cliant receive　the message like
 ```json
 {

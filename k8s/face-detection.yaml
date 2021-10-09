@@ -2,24 +2,24 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    run: face-detection-from-directory
-  name: face-detection-from-directory
+    run: event-driven-face-existence-detection
+  name: event-driven-face-existence-detection
 spec:
   replicas: 1
   selector:
     matchLabels:
-      run: face-detection-from-directory
+      run: event-driven-face-existence-detection
   strategy:
     rollingUpdate:
   template:
     metadata:
       labels:
-        run: face-detection-from-directory
+        run: event-driven-face-existence-detection
     spec:
-      hostname: face-detection-from-directory
+      hostname: event-driven-face-existence-detection
       containers:
-        - name: face-detection-from-directory
-          image: latonaio/face-detection-from-directory
+        - name: event-driven-face-existence-detection
+          image: latonaio/event-driven-face-existence-detection
           imagePullPolicy: IfNotPresent
           env:
             - name: PORT
@@ -39,7 +39,7 @@ spec:
             - name: data
               mountPath: /var/lib/aion/Data
             - name: ui
-              mountPath: /var/lib/aion/FaceDetection/face-detection-from-directory/public/
+              mountPath: /var/lib/aion/FaceDetection/event-driven-face-existence-detection/public/
           resources:
             limits:
               cpu: "1"
@@ -53,17 +53,17 @@ spec:
           path: /var/lib/aion/default/Data
       - name: ui
         hostPath:
-          path: /var/lib/aion/FaceDetection/face-detection-from-directory/public/
+          path: /var/lib/aion/FaceDetection/event-driven-face-existence-detection/public/
 ---
 apiVersion: v1
 kind: Service
 metadata:
   labels:
-    run: face-detection-from-directory
-  name: face-detection-from-directory
+    run: event-driven-face-existence-detection
+  name: event-driven-face-existence-detection
 spec:
   selector:
-    run: face-detection-from-directory
+    run: event-driven-face-existence-detection
   type: ClusterIP
   ports:
   - port: 8888

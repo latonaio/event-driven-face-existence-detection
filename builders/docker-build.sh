@@ -3,7 +3,7 @@
 PUSH=$1
 DATE="$(date "XXXXXXXX")"
 REPOSITORY_PREFIX="latonaio"
-SERVICE_NAME="face-detection-from-directory"
+SERVICE_NAME="event-driven-face-existence-detection"
 
 docker build -f dockerfiles/Dockerfile -t ${SERVICE_NAME}:"${DATE}" .
 # DOCKER_BUILDKIT=1 docker build --progress=plain -t ${SERVICE_NAME}:"${DATE}" .
