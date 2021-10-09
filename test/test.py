@@ -38,7 +38,7 @@ def on_open(ws):
 if __name__ == "__main__":
 	# websocket.enableTrace(True)
 	websocket.enableTrace(False)
-	ws = websocket.WebSocketApp("ws://face-detection-from-directory:8888/websocket",
+	ws = websocket.WebSocketApp("ws://event-driven-face-existence-detection:8888/websocket",
 	on_message = on_message,
 	on_error = on_error,
 	on_close = on_close)
