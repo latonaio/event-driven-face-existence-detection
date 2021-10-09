@@ -1,0 +1,2 @@
+tornado==6.1
+opencv-python==4.5.2.54

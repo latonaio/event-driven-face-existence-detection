@@ -1,0 +1,71 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    run: face-detection-from-directory
+  name: face-detection-from-directory
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: face-detection-from-directory
+  strategy:
+    rollingUpdate:
+  template:
+    metadata:
+      labels:
+        run: face-detection-from-directory
+    spec:
+      hostname: face-detection-from-directory
+      containers:
+        - name: face-detection-from-directory
+          image: latonaio/face-detection-from-directory
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: PORT
+              value: "8888"
+            - name: OBSERVATION_DIR
+              value: "/var/lib/aion/Data/analyze"
+            - name: OBSERVATION_FILE
+              value: "standbyImageForFaceDetection.jpg"
+            - name: DETECT_INTERVAL
+              value: "5"
+            - name: TZ
+              value: Asia/Tokyo
+          ports:
+            - containerPort: 8888
+              protocol: TCP
+          volumeMounts:
+            - name: data
+              mountPath: /var/lib/aion/Data
+            - name: ui
+              mountPath: /var/lib/aion/FaceDetection/face-detection-from-directory/public/
+          resources:
+            limits:
+              cpu: "1"
+              memory: "200Mi"
+            requests:
+              cpu: "0.5"
+              memory: "100Mi"
+      volumes:
+      - name: data
+        hostPath:
+          path: /var/lib/aion/default/Data
+      - name: ui
+        hostPath:
+          path: /var/lib/aion/FaceDetection/face-detection-from-directory/public/
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    run: face-detection-from-directory
+  name: face-detection-from-directory
+spec:
+  selector:
+    run: face-detection-from-directory
+  type: ClusterIP
+  ports:
+  - port: 8888
+    protocol: TCP
+    targetPort: 8888
