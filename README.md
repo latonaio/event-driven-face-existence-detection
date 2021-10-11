@@ -3,7 +3,7 @@
 
 ### Clone and Build
 ```
-$ git clone git@bitbucket.org:latonaio/event-driven-face-existence-detection.git
+$ git clone git@github.com:latonaio/event-driven-face-existence-detection.git
 $ cd /path/to/event-driven-face-existence-detection
 $ make docker-build
 ```
