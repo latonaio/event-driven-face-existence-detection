@@ -33,8 +33,8 @@ $ make docker-build
   "1": {"status": true, "type": "human", "x": 10, "y": 111, "w": 250, "h": 246}
 }
 ```
-paramator
-* 0 : detection number.
-* status : detected result.
-* type : detected object type. (now only human)
-* x, y, w, h : detected object postion and size.
+### paramator
+* 0 : detection number.   
+* status : detected result.   
+* type : detected object type. (now only human)   
+* x, y, w, h : detected object postion and size.   
