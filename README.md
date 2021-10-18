@@ -1,6 +1,9 @@
 # event-driven-face-existence-detection   
 何らかのイベントをトリガーとして、入力された画像における顔の存在を検知するマイクロサービスです。   
 
+## event-driven-face-existence-detection を使用したエッジコンピューティングアーキテクチャの一例
+![フローチャート図](doc/omotebako_architecture_20211016.drawio.png)
+
 ### Clone and Build
 ```
 $ git clone git@github.com:latonaio/event-driven-face-existence-detection.git
