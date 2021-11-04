@@ -2,7 +2,7 @@
 何らかのイベントをトリガーとして、入力された画像における顔の存在を検知するマイクロサービスです。   
 
 ## event-driven-face-existence-detection を使用したエッジコンピューティングアーキテクチャの一例
-![フローチャート図](doc/omotebako_architecture_20211016.drawio.png)
+![フローチャート図](doc/omotebako_architecture_20211104.drawio.png)
 
 ### Clone and Build
 ```
